@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Open+Sans+Condensed:300,700&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Mr+Bedfort');
+
+body {
+  height: 100%;
+  font-family: $main-font;
+}
+* {
+  box-sizing: border-box;
+  &::after,
+  &::before {
+    box-sizing: border-box;
+  }
+}
+a,
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+svg {
+  transition: fill .3s;
+  @include hover() {
+    transition: fill .3s;
+  }
+}
+.wrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.header,
+.footer {
+  width: 100%;
+}
+.footer {
+  align-self: flex-end;
+}
+.align {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+  @include response-min(1200px) {
+    max-width: 1170px;
+    padding: 0;
+  }
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+}

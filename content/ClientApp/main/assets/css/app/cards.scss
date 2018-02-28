@@ -1,0 +1,21 @@
+.cards {
+  &__items {
+    flex-wrap: wrap;
+  }
+  &__item {
+    width: 23.5%;
+    margin-right: 2%;
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+    // @include response()
+  }
+  // &__img {
+  //   width: 280px;
+  //   height: 200px;
+  //   background-color: $main;
+  // }
+  &__done {
+    opacity: .5;
+  }
+}
