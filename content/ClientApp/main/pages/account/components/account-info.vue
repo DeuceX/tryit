@@ -2,7 +2,7 @@
   <div class="account-info">
     <div class="align account-info__wrap flex-row">
       <div class="account-info__left">
-        <div class="account-info__img"><img src="" alt=""></div>
+        <div class="account-info__img"><img src="../../../assets/data/ava.jpg" alt=""></div>
         <div class="account-info__cases"><b>20</b> cases</div>
       </div>
       <div class="account-info__right flex-col">

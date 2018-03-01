@@ -51,6 +51,8 @@
     transform: translate(-50%, -50%);
     background-color: $white;
     padding: 20px 40px;
+    max-width: 420px;
+    width: 100%;
     .header__logo {
       width: 100%;
       text-align: center;
@@ -68,6 +70,10 @@
   &__form-top {
     margin-bottom: 20px;
     text-align: center;
+    display: none;
+    &.active {
+      display: block;
+    }
   }
   &__separator {
     font-family: $title-font;
@@ -106,6 +112,12 @@
     @include hover() {
       color: $main-hover;
       transition: color .3s;
+    }
+  }
+  &__form-content {
+    display: none;
+    &.active {
+      display: block;
     }
   }
 }

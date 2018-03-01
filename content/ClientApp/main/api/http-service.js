@@ -13,9 +13,9 @@ let getHeaders = () => {
     return headers;
 };
 
-export const getData = params => {
+export const getData = url => {
     const headers = getHeaders();
-    return axios.get(params.url, headers);
+    return axios.get(url, headers);
 };
 
 export const postData = params => {

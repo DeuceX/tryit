@@ -8,10 +8,9 @@
         :key="index" 
         :class="card.isCompleted ? 'cards__done' : ''">
         <h3>{{ card.name }}</h3>
-        <h4>{{ card.description }}</h4>
-        <router-link :to="'/card-details/' + card.id">
+        <router-link :to="'/card-details/' + card.Id">
           <div class="cards__img">
-            <img src="./../../assets/data/card.png" alt="card" width="280" height="200" />
+            <img :src="'{{ card.ImageUrl }}'" alt="card" width="280" height="200" />
           </div>
         </router-link>
       </div>
@@ -21,24 +20,23 @@
 
 <script>
   import AccountInfo from './components/account-info';
+  import * as cardService from '../../api/card-service';
 
   export default {
     data() {
       return {
-        cards: null
+        cards: {}
       }
     },
     components: {
       accountInfo: AccountInfo
     },
-    async created() {
-      try {
-        let response = await this.$http.get('/api/CardApi/GetAll');
-        this.cards = response.data;
-        console.log(this.cards);
-      } catch (error) {
-          console.log(error)
-      }
+    async beforeMount() {
+      let that = this;
+      cardService.getAll()
+        .then(function(response) {
+            that.cards = response.data;
+        });;
     }
   }
 </script>

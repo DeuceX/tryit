@@ -7,7 +7,7 @@
         v-on:click="index = tabIndex"
         :key="tabIndex"
         :class="(tabIndex == index) ? 'active' : ''"> 
-        {{ tab.name }}
+        <span>{{ tab.name }}</span>
       </div>
       <router-link 
         :to="'#'" 

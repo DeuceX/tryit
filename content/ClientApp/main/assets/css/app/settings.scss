@@ -39,6 +39,12 @@
         width: 100%;
         background-color: $main;
       }
+      @include hover() {
+        color: $main-hover;
+        span::before {
+          background-color: $main-hover;
+        }
+      }
     }
     @include hover() {
       color: $main-hover;

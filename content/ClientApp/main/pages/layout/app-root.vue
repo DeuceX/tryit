@@ -8,7 +8,7 @@
 </template>
 <script>
   import Vue from 'vue'
-  import HomePage from './components/home-page'
+  import HomePage from '../home-page/home-page'
   import header from './components/header'
   import AccountPage from '../account/account'
   import SettingsPage from '../settings/settings'  
