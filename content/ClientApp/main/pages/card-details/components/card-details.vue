@@ -1,30 +1,19 @@
 <template>
-  <div class="container">
-      <div class="row">
-          <div class="col-md-offset-2 col-md-8">
-              <h1>Card details</h1>
-          </div>
+  <div class="card-details align" :class="card.IsCompleted ? 'complete' : ''">
+    <h1>{{ card.Name }}</h1>
+    <div class="card-details__description flex-row">
+      <div class="cards__img">
+        <img :src="card.ImageUrl" alt="card" width="200" height="280" />
       </div>
-      <div class="row">
-          <div class="col-md-8 col-md-offset-2">
-              <h3>{{ card.Name }}</h3>
-              <h4>{{ card.Description }}</h4>
-              <div class="img-wrap">
-                  <img :src="card.ImageUrl" alt="card photo" />
-                  <div v-if="card.IsCompleted" class="completed">
-                      This Card is Completed!
-                  </div>
-              </div>
-          </div>
+      <div class="card-details__info">
+        <div class="card-details__text"> {{ card.Description }} </div>
+        <div class="card-details__btn">Complete!</div>
       </div>
-      <div class="row" v-if="card.IsCompleted">
-          <div class="col-md-12">
-              <h3>This card was completed!</h3>
-              <hr />
-              <h4><i>Your comment:</i></h4>
-              <h4>{{ card.Comment }}</h4>
-          </div>
-      </div>
+    </div>
+    <div class="card-details__complete" v-if="card.IsCompleted">
+      <span>Your comment:</span>
+      <div class="card-details__comment">{{ card.Comment }}</div>
+    </div>
   </div>
 </template>
 <script>

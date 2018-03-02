@@ -1,0 +1,16 @@
+.card-details {
+  h1 {
+    text-align: center;
+  }
+  &__description {
+
+  }
+  .cards__img {
+    margin: 0;
+    flex: 0 0 auto;
+    width: 180px;
+  }
+  &__info {
+    flex: 1 0 0%;
+  }
+}

@@ -74,11 +74,11 @@
     border: 1px solid $grey;
     padding: 12px 18px;
     color: $main;
-    font-family: $main-font;
+    font-family: $input-font;
+    font-weight: 400;
     font-size: 14px;
     line-height: 1;
     width: 100%;
-    letter-spacing: 2px;
     outline: none;
     &:focus {
       border-color: $main;

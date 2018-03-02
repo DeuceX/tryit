@@ -1,17 +1,21 @@
 <template>
   <div class="cards">
     <account-info></account-info>
+    <div class="cards__tabs align flex-row">
+      <div class="cards__tab">Basic</div>
+      <div class="cards__tab">Add</div>      
+    </div>
     <div class="cards__items flex-row align">
       <div 
         class="cards__item" 
         v-for="(card, index) in cards" 
         :key="index" 
         :class="card.isCompleted ? 'cards__done' : ''">
-        <h3>{{ card.name }}</h3>
         <router-link :to="'/card-details/' + card.Id">
           <div class="cards__img">
-            <img :src="'{{ card.ImageUrl }}'" alt="card" width="280" height="200" />
+            <img :src="card.ImageUrl" alt="card" width="200" height="280" />
           </div>
+          <div class="cards__name">{{ card.Name }}</div>
         </router-link>
       </div>
     </div>

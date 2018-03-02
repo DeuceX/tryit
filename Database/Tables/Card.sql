@@ -17,7 +17,12 @@ CREATE TABLE [Card] (
 INSERT INTO [Card]
 	(CardSetId, [Name], [Description], ImageUrl, [Type])
 VALUES 
-	(1, 'Name 1', 'Description 1', '~/dist/data/card.png', 'card type'),
-	(1, 'Name 2', 'Description 2', '~/dist/data/card.png', 'card type'),
-	(1, 'Name 3', 'Description 3', '~/dist/data/card.png', 'card type'),
-	(1, 'Name 4', 'Description 4', '~/dist/data/card.png', 'card type')
+	(1, 'Make a Coffee', 'Making coffee is awesome', '/img/card1.png', 'card type'),
+	(1, 'coming soon', 'Description 2', '/img/card.png', 'card type'),
+	(1, 'coming soon and feed sima', 'Description 3', '/img/card.png', 'card type'),
+	(1, 'coming soon', 'Description 4', '/img/card.png', 'card type'),
+	(1, 'coming soon', 'Description 5', '/img/card.png', 'card type'),
+	(1, 'coming soon', 'Description 6', '/img/card.png', 'card type'),
+	(1, 'coming soon', 'Description 7', '/img/card.png', 'card type'),
+	(1, 'coming soon', 'Description 8', '/img/card.png', 'card type')
+	select * from dbo.Card
