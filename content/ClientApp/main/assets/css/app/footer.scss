@@ -1,0 +1,26 @@
+.footer {
+  padding: 10px 0;
+  border-top: 1px solid $border;
+  .mainpage & {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: none;
+    &__link {
+      color: $text-grey;
+      font-size: 14px;
+    }
+  }
+  &__wrap {
+    justify-content: space-between;    
+  }
+  &__link {
+    font-size: 18px;
+    line-height: 1;
+    transition: color .3s;    
+    @include hover() {
+      color: $main-hover;
+      transition: color .3s;
+    }
+  }
+}

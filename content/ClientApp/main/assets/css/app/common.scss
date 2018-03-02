@@ -29,13 +29,20 @@ svg {
   width: 100%;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .header,
 .footer {
   width: 100%;
 }
-.footer {
-  align-self: flex-end;
+.content {
+  flex: 1 0 0%;
+  padding-bottom: 40px;
+  .mainpage & {
+    padding: 0;
+  }
 }
 .align {
   width: 100%;
@@ -93,4 +100,31 @@ h5 {
 h6 {
   font-size: 32px;
   margin: 5px 0 10px;
+}
+.btn {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border-radius: 0;
+  background-color: $main;
+  color: $white;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 25px;
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  font-family: $title-font;
+  font-weight: 700;
+  outline: none;
+  transition: background-color .3s;
+  align-self: flex-end;
+  @include hover() {
+    background-color: $main-hover;
+    transition: background-color .3s;
+  }
 }

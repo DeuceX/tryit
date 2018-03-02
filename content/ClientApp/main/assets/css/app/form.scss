@@ -42,6 +42,12 @@
       transition: background-color .3s;
     }
   }
+  &__jc {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
   &__file {
     input[type="file"] {
       opacity: 0;
@@ -114,5 +120,8 @@
   textarea {
     min-height: 150px;
     resize: vertical;
+  }
+  label {
+    margin-bottom: 0;
   }
 }
