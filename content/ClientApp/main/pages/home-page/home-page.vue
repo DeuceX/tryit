@@ -15,9 +15,16 @@
         :class="(formIndex == i) ? 'active' : ''">
         <div class="header__logo"> {{form.title}} </div>
         <div class="main__separator">or</div>
-        <div class="main__login" @click="i = formIndex"> {{form.link}} </div>
-      </div>
 
+        <div 
+          class="main__login"
+          v-for="(form, formIndex) in forms"
+          :key="formIndex + 15"
+          :class="(formIndex == i) ? 'active' : ''"
+          @click="myFilter"> 
+          {{form.link}}
+        </div>
+      </div>
       <div 
         class="main__form-content"
         v-for="(form, formIndex) in forms"
@@ -38,7 +45,7 @@
   export default {
     data() {
       return {
-        i: 0,
+        i: false,
         forms: [
           {
             formIndex: 0,
@@ -53,6 +60,12 @@
             content: 'form-login'
           }
         ]
+      }
+    },
+    methods: {
+      myFilter: function(){
+        this.i = !this.i;
+        
       }
     },
     mounted: function() {

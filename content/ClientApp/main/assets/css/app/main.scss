@@ -68,7 +68,6 @@
     }
   }
   &__form-top {
-    margin-bottom: 20px;
     text-align: center;
     display: none;
     &.active {
@@ -106,9 +105,13 @@
     font-size: 18px;
     line-height: 1;
     letter-spacing: 1.2px;
-    display: inline-block;
     transition: color .3s;
+    display: none;
     cursor: pointer;
+    &.active {
+      margin-bottom: 20px;
+      display: inline-block;
+    }
     @include hover() {
       color: $main-hover;
       transition: color .3s;

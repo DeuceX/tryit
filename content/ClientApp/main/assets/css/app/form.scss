@@ -78,19 +78,37 @@
     font-size: 14px;
     line-height: 1;
     width: 100%;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     outline: none;
     &:focus {
       border-color: $main;
     }
-    &::-webkit-input-placeholder,
-    &::-moz-placeholder,
-    &:-ms-input-placeholder,
+  }
+  input,
+  textarea {
     &:-moz-placeholder {
-      font-family: $main-font;
-      font-size: 14px;
+      color: $text-grey;
+      font-family: $title-font;
+      font-size: 16px;
       line-height: 1;
-      color: $border;
+    }
+    &::-moz-placeholder {
+      color: $text-grey;
+      font-family: $title-font;
+      font-size: 16px;
+      line-height: 1;
+    }
+    &:-ms-input-placeholder {
+      color: $text-grey;
+      font-family: $title-font;
+      font-size: 16px;
+      line-height: 1;
+    }
+    &::-webkit-input-placeholder {
+      color: $text-grey;
+      font-family: $title-font;
+      font-size: 16px;
+      line-height: 1;
     }
   }
   textarea {
