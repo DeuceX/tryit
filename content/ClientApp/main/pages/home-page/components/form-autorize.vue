@@ -27,7 +27,11 @@
           FullName: this.name,
           Password: this.pass
         }
-        authService.registr(usr);
+        authService.registr(usr)
+            .then(function (response) {
+                alert(response.data);
+                document.querySelector('.main__login').click();
+            });
       }
     }
   }

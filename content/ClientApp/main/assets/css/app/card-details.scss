@@ -1,16 +1,52 @@
 .card-details {
+  &.complete {
+    h1 {
+      color: $green;
+      &::before {
+        display: inline-block;
+      }
+    }
+    .btn {
+      display: none;
+    }
+  }
   h1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    &::before {
+      content: $ok;
+      display: none;
+      color: $green;
+      margin-right: 12px;
+      font-size: 42px;
+      line-height: .8;
+    }
   }
   &__description {
-
+    align-items: center;
+    margin-bottom: 40px;
   }
   .cards__img {
     margin: 0;
+    margin-right: 2%;
     flex: 0 0 auto;
-    width: 180px;
+    width: 200px;
   }
   &__info {
     flex: 1 0 0%;
+  }
+  &__text {
+    font-size: 20px;
+    line-height: 1.3;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+  &__complete {
+    max-width: 620px;
+    width: 100%;
+    margin: 0 auto;
   }
 }

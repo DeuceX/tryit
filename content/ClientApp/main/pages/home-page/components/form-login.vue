@@ -1,7 +1,7 @@
 <template>
   <form class="form form-btn-right">
-    <div class="form__item"><input type="email" placeholder="Email"></div>
-    <div class="form__item"><input type="password" placeholder="Password"></div>
+    <div class="form__item"><input v-model="email" type="email" placeholder="Email"></div>
+    <div class="form__item"><input v-model="pass" type="password" placeholder="Password"></div>
     <button @click.prevent="login" class="form__btn">Login</button>
   </form>
 </template>
@@ -11,9 +11,7 @@
     data() {
       return {
         name: '',
-        email: '',
-        nick: '',
-        pass: ''
+        email: ''
       }
     },
     methods: {
@@ -24,9 +22,10 @@
           RememberMe: true
         }
         let response = authService.login(data)
-        .then(function (response) {
-          localStorage.setItem("token", response.data.token);
-        });
+            .then(function (response) {
+                localStorage.setItem("token", response.data.token);
+                localStorage.setItem("user", response.data.user);
+            });
       }
     }
   }
