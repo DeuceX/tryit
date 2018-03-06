@@ -10,6 +10,8 @@ namespace DAL.Map
         public void MapEntity(EntityTypeBuilder<Customer> builder)
         {
             builder.ToTable("Customers", "dbo");
+
+            builder.HasKey(c => c.Id);
         }
     }
 }

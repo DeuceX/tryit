@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Context
 {
-    public class ApplicationContext : IdentityDbContext<Customer>
+    public class ApplicationContext : IdentityDbContext<Customer, ApplicationRole, int>
     {
         public DbSet<Card> Card { get; set; }
         public DbSet<CardSet> CardSets { get; set; }

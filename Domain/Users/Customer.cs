@@ -5,9 +5,10 @@ using Newtonsoft.Json;
 namespace Domain.Users
 {
     [JsonObject(IsReference = true)]
-    public class Customer : IdentityUser
+    public class Customer : IdentityUser<int>
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
+
         public string FullName { get; set; }
 
         public string Password { get; set; }
