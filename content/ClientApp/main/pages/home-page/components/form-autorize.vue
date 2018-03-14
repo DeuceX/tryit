@@ -23,7 +23,7 @@
       register: function () {
         let usr = {
           Email: this.email,
-          UserName: this.name,
+          NickName: this.nick,
           FullName: this.name,
           Password: this.pass
         }

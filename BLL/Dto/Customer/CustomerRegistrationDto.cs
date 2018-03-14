@@ -10,6 +10,8 @@ namespace BLL.Dto.Customer
         public string Email { get; set; }
 
         public string FullName { get; set; }
+        public string NickName { get; set; }
+        public string Description { get; set; }
 
         public string Password { get; set; }
 

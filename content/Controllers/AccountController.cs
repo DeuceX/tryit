@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 using BLL.Dto.Customer;
 using BLL.Services.Interfaces;
 using Domain.Users;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
-using Web.Authentication;
+using AuthenticationOptions = Web.Authentication.AuthenticationOptions;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -31,6 +33,15 @@ namespace Web.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
             _userService = userService;
+        }
+
+        [HttpGet]
+        [Route("logout")]
+        [AllowAnonymous]
+        public IActionResult Logout(string returnUrl = null)
+        {
+            var result = _signInManager.SignOutAsync();
+            return Ok(result);
         }
 
         [HttpPost]
@@ -58,7 +69,7 @@ namespace Web.Controllers
             {
                 var user = new Customer
                 {
-                    UserName = data.Email,
+                    UserName = data.NickName,
                     Email = data.Email,
                     FullName = data.FullName,
                     DateOfBirthsday = data.DateOfBirthsday

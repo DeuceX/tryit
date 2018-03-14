@@ -20,7 +20,7 @@ namespace DAL.Repositories
 
         public Customer GetCustomerByTerm(string term)
         {
-            return _dbContext.Customers.FirstOrDefault(x => x.Email.ToLower() == term.ToLower());
+            return _dbContext.Customers.FirstOrDefault(x => x.UserName.ToUpper() == term.ToUpper());
         }
 
         public IEnumerable<Customer> GetCustomers()

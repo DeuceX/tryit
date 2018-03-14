@@ -7,9 +7,9 @@
       </div>
       <div class="account-info__right flex-col">
         <div class="account-info__description">
-          <div class="account-info__name">Name Surname</div>
-          <div class="account-info__nick">Nickname</div>
-          <div class="account-info__about">bla-bla-bla bla-bla</div>
+          <div class="account-info__name">{{ user.FullName }}</div>
+          <div class="account-info__nick">{{ user.UserName }}</div>
+          <div class="account-info__about">{{ user.Description ? user.Description : 'bla-bla-bla bla-bla-bla' }}</div>
         </div>
         <div class="account-info__settings flex-row">
           <router-link :to="'/account/settings'" class="header__link">
@@ -74,7 +74,9 @@
 <script>
   export default {
     data() {
-      return {}
+        return {
+            user: JSON.parse(localStorage.user)
+        }
     }
   }
 </script>

@@ -7,9 +7,10 @@ namespace Domain.Users
     [JsonObject(IsReference = true)]
     public class Customer : IdentityUser<int>
     {
-        public int Id { get; set; }
-
         public string FullName { get; set; }
+        public string NickName { get; set; }
+        public string Description { get; set; }
+        public string AvatarUrl { get; set; }
 
         public string Password { get; set; }
 

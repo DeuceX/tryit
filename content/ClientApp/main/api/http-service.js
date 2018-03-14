@@ -6,7 +6,7 @@ let getHeaders = () => {
 
     if (token) {
         headers = {
-            headers: { Authorization: `Bearer ${sessionStorage.token}` }
+            headers: { Authorization: `Bearer ${localStorage.token}` }
         };
     }
 
